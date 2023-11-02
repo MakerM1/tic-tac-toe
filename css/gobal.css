@@ -144,6 +144,8 @@ body {
   background-color: rgb(15, 15, 15);
   color: white;
   position: relative;
+  overflow-y: hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
 body::-webkit-scrollbar {
   width: 8px;
@@ -240,11 +242,11 @@ body .winner {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   bottom: -80px;
-  -webkit-transition: bottom 0.2s;
-  transition: bottom 0.2s;
+  -webkit-transition: bottom 0.3s;
+  transition: bottom 0.3s;
 }
 body .winner.active {
-  bottom: 20px;
+  bottom: 100px;
 }
 @media (max-width: 262px) {
   body .winner {
