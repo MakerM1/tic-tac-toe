@@ -140,6 +140,19 @@ function determineWinner(sign) {
         boxes[2].style.color = 'green'
         boxes[4].style.color = 'green'
         boxes[6].style.color = 'green'
+    } else if (boxes[0].innerHTML !== '' 
+    && boxes[1].innerHTML !== ''
+    && boxes[2].innerHTML !== ''
+    && boxes[3].innerHTML !== ''
+    && boxes[4].innerHTML !== ''
+    && boxes[5].innerHTML !== ''
+    && boxes[6].innerHTML !== ''
+    && boxes[7].innerHTML !== ''
+    && boxes[8].innerHTML !== ''
+    ) {
+        overlay.classList.add('active')
+        winnerPopUp.classList.add('active')
+        winnerPopUpText.innerHTML = `It's a Tie!`
     }
 
     localStorage.getItem('xWins', JSON.stringify(xWins))
