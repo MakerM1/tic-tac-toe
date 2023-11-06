@@ -4,10 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/gobal.css" />
+    <link rel="icon" href="images/tic-tac-toe-icon.svg" />
     <title>Tic Tac Toe</title>
+    <script
+      src="https://kit.fontawesome.com/2d3e948390.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
+      <div class="menu">
+        <div class="hamburger-menu">
+          <div class="lines"></div>
+          <div class="lines"></div>
+          <div class="lines"></div>
+        </div>
+      </div>
+      <div class="open-menu">
+        <div class="contents">
+          <div class="option" title="Light Theme">
+            <i class="fa-regular fa-sun fa-lg"></i>
+            <p>Theme</p>
+          </div>
+          <div class="option" title="VS. Bot">
+            <i class="fa-solid fa-robot fa-lg"></i>
+            <p>VS. Bot</p>
+          </div>
+          <div class="option" title="About">
+            <i class="fa-solid fa-circle-info fa-lg"></i>
+            <p>About</p>
+          </div>
+        </div>
+      </div>
       <h1 class="title">Tic Tac Toe</h1>
     </header>
     <div class="board">
@@ -29,6 +57,16 @@
         <button class="quit">Close</button>
       </div>
     </div>
+    <div class="warning" id="warning">
+      <h5>Warning:</h5>
+      <p>
+        Hey Pookie woo the menu in top left is in development so nothing works
+        in it plpease no touchy wouchy yet
+      </p>
+      <button class="close">Close</button>
+    </div>
+    <script src="scripts/general.js"></script>
     <script src="scripts/index.js" type="module"></script>
+    <script src="scripts/header.js"></script>
   </body>
 </html>

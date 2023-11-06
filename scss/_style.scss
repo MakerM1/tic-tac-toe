@@ -26,8 +26,63 @@ body {
 
     header {
         .title {
+            margin-top: 10px;
             font-size: 30px;
             margin-bottom: 50px;
+        }
+
+
+        .open-menu {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10000;
+            background-color: transparent;
+            border-radius: 50%;
+            transition: all 0.2s;
+            overflow-y: hidden;
+            overflow-x: hidden;
+
+            .contents {
+                margin-top: 55px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+
+                .option {
+                    transform: scale(0);
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                    background-color: transparent;
+                    border-radius: 50%;
+                    width: 45px;
+                    height: 45px;
+                    padding: 7px 5px;
+                    transition: all 0.15s;
+                    color: white;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    i {
+                        font-size: 20px;
+                        margin-top: 5px;
+                    }
+
+                    p {
+                        font-size: 10px;
+                    }
+
+                    &:hover {
+                        background-color: rgb(33, 33, 33);
+                        color: #26a7de;
+                    }
+                }
+            }
         }
 
         .menu {
@@ -43,24 +98,64 @@ body {
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            transition: all 0.15s;
+            transition: all 0.3s;
+            z-index: 100001;
+
+            .hamburger-menu {
+                position: absolute;
+                top: 17px;
+                z-index: 100;
+            }
 
             &:hover {
                 background-color: rgb(73, 73, 73);
             }
 
             &.active {
-                transform: rotate(360deg);
+
+                &~.open-menu {
+                    background-color: rgb(57, 57, 57);
+                    height: 230px;
+                    border-radius: 30px;
+
+                    .option {
+                        animation: scale 0.5s ease-in-out 1;
+                        transform: scale(1);
+
+                        @keyframes scale {
+                            0% {
+                                transform: scale(0);
+                            }
+
+                            50% {
+                                transform: scale(1.2);
+                            }
+
+                            100% {
+                                transform: scale(1);
+                            }
+                        }
+                    }
+                }
+
+                .open-menu {
+                    background-color: rgb(57, 57, 57);
+                    height: 200px;
+                    border-radius: 30px;
+                }
 
                 .lines {
+
                     &:nth-child(1) {
-                        transform: translateY(7.5px) rotate(45deg);
+                        margin-bottom: 0;
+                        transform: translateY(5px) rotate(45deg);
                         background-color: #26a7de;
                     }
 
                     &:nth-child(3) {
-                        transform: translateY(-7px) rotate(-45deg);
+                        transform: translateY(-5.1px) rotate(-45deg);
                         background-color: #26a7de;
+                        margin-bottom: 0;
                     }
 
                     &:nth-child(2) {
@@ -74,7 +169,7 @@ body {
                 margin-bottom: 5px;
                 height: 2px;
                 background-color: white;
-                transition: transform 0.2s, background-color 0.2s;
+                transition: transform 0.2s ease-in-out, background-color 0.2s, opacity 0.15s;
 
                 &:nth-child(3) {
                     margin-bottom: 0;
@@ -167,7 +262,8 @@ body {
             border-radius: 50%;
         }
 
-        .winner-text {
+        .winner-text,
+        .text {
             font-size: 18px;
             font-weight: 600;
 
@@ -213,6 +309,75 @@ body {
 
                 &:hover {
                     background-color: rgb(223, 223, 223);
+                }
+            }
+        }
+    }
+
+    .warning {
+        z-index: 1000000000;
+        position: fixed;
+        max-width: 500px;
+        width: 100%;
+        padding: 20px;
+        height: 250px;
+        background-color: rgb(57, 57, 57);
+        top: 50%;
+        left: 50%;
+        border-radius: 50px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translate(-50%, -50%) scale(0);
+
+        p {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+
+        h5 {
+            font-weight: 600;
+            font-size: 20px;
+            color: rgb(190, 15, 15);
+        }
+
+        button {
+            width: 100px;
+            height: 40px;
+            background-color: rgb(190, 15, 15);
+            border-radius: 50px;
+            color: white;
+            border: 2px solid transparent;
+            transition: all 0.15s;
+            cursor: pointer;
+            font-weight: 600;
+
+            &:hover {
+                background-color: rgb(143, 23, 23);
+                border: 2px solid white;
+                color: white;
+            }
+        }
+
+        &.active {
+            transform: translate(-50%, -50%) scale(1);
+            animation: pop-up 0.4s ease-in-out 1;
+
+            @keyframes pop-up {
+                0% {
+                    transform: translate(-50%, -50%) scale(0);
+                }
+
+                50% {
+                    transform: translate(-50%, -50%) scale(1.2);
+                }
+
+                100% {
+                    transform: translate(-50%, -50%) scale(1);
                 }
             }
         }

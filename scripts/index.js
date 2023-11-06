@@ -172,7 +172,7 @@ function restartGame() {
             }
         }
     })
-    }
+}
     
     winnerPopUpQuitButton.addEventListener('click', () => {
         winnerPopUp.classList.remove('active')
