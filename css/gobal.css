@@ -429,6 +429,9 @@ body .board .box {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
+body .board .box.win {
+  color: green;
+}
 body .board .box:active {
   -webkit-transform: scale(0.96);
       -ms-transform: scale(0.96);
@@ -704,9 +707,13 @@ body.light-theme .board {
 }
 body.light-theme .board .box {
   border: 2px solid black;
+  color: black;
 }
 body.light-theme .board .box:hover {
   background-color: rgb(199, 199, 199);
+}
+body.light-theme .board .box.win {
+  color: green;
 }
 body.light-theme .winner {
   background-color: rgb(216, 216, 216);

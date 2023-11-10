@@ -25,9 +25,9 @@ function determineWinner(sign) {
             oWins += 1 
             console.log(oWins)
         }
-        boxes[0].style.color = 'green'
-        boxes[1].style.color = 'green'
-        boxes[2].style.color = 'green'
+        boxes[0].classList.toggle('win')
+        boxes[1].classList.toggle('win')
+        boxes[2].classList.toggle('win')
     } else if ( boxes[3].innerHTML === `${sign}` && boxes[4].innerHTML === `${sign}` && boxes[5].innerHTML === `${sign}` ) {
         console.log(`${sign} win`)
         overlay.classList.add('active')
@@ -41,9 +41,9 @@ function determineWinner(sign) {
             oWins += 1 
             console.log(oWins)
         }
-        boxes[3].style.color = 'green'
-        boxes[4].style.color = 'green'
-        boxes[5].style.color = 'green'
+        boxes[3].classList.toggle('win')
+        boxes[4].classList.toggle('win')
+        boxes[5].classList.toggle('win')
     } else if (boxes[6].innerHTML === `${sign}` && boxes[7].innerHTML === `${sign}` && boxes[8].innerHTML === `${sign}`) {
         console.log(`${sign} win`)
         overlay.classList.add('active')
@@ -57,9 +57,9 @@ function determineWinner(sign) {
             oWins += 1 
             console.log(oWins)
         }
-        boxes[6].style.color = 'green'
-        boxes[7].style.color = 'green'
-        boxes[8].style.color = 'green'
+        boxes[6].classList.toggle('win')
+        boxes[7].classList.toggle('win')
+        boxes[8].classList.toggle('win')
     } else if (boxes[0].innerHTML === `${sign}` && boxes[3].innerHTML === `${sign}` && boxes[6].innerHTML === `${sign}`) {
         console.log(`${sign} win`)
         overlay.classList.add('active')
@@ -73,9 +73,9 @@ function determineWinner(sign) {
             oWins += 1 
             console.log(oWins)
         }
-        boxes[0].style.color = 'green'
-        boxes[3].style.color = 'green'
-        boxes[6].style.color = 'green'
+        boxes[0].classList.toggle('win')
+        boxes[3].classList.toggle('win')
+        boxes[6].classList.toggle('win')
     } else if (boxes[1].innerHTML === `${sign}` && boxes[4].innerHTML === `${sign}` && boxes[7].innerHTML === `${sign}`) {
         console.log(`${sign} win`)
         overlay.classList.add('active')
@@ -89,9 +89,9 @@ function determineWinner(sign) {
             oWins += 1 
             console.log(oWins)
         }
-        boxes[1].style.color = 'green'
-        boxes[4].style.color = 'green'
-        boxes[7].style.color = 'green'
+        boxes[1].classList.toggle('win')
+        boxes[4].classList.toggle('win')
+        boxes[7].classList.toggle('win')
     } else if (boxes[2].innerHTML === `${sign}` && boxes[5].innerHTML === `${sign}` && boxes[8].innerHTML === `${sign}`) {
         console.log(`${sign} win`)
         overlay.classList.add('active')
@@ -105,9 +105,9 @@ function determineWinner(sign) {
             oWins += 1 
             console.log(oWins)
         }
-        boxes[2].style.color = 'green'
-        boxes[5].style.color = 'green'
-        boxes[8].style.color = 'green'
+        boxes[2].classList.toggle('win')
+        boxes[5].classList.toggle('win')
+        boxes[8].classList.toggle('win')
     } else if (boxes[0].innerHTML === `${sign}` && boxes[4].innerHTML === `${sign}` && boxes[8].innerHTML === `${sign}`) {
         console.log(`${sign} win`)
         overlay.classList.add('active')
@@ -121,9 +121,9 @@ function determineWinner(sign) {
             oWins += 1 
             console.log(oWins)
         }
-        boxes[0].style.color = 'green'
-        boxes[4].style.color = 'green'
-        boxes[8].style.color = 'green'
+        boxes[0].classList.toggle('win')
+        boxes[4].classList.toggle('win')
+        boxes[8].classList.toggle('win')
     } else if ( boxes[2].innerHTML === `${sign}` && boxes[4].innerHTML === `${sign}` && boxes[6].innerHTML === `${sign}`) {
         console.log(`${sign} win`)
         overlay.classList.add('active')
@@ -137,9 +137,9 @@ function determineWinner(sign) {
             oWins += 1 
             console.log(oWins)
         }
-        boxes[2].style.color = 'green'
-        boxes[4].style.color = 'green'
-        boxes[6].style.color = 'green'
+        boxes[2].classList.toggle('win')
+        boxes[4].classList.toggle('win')
+        boxes[6].classList.toggle('win')
     } else if (boxes[0].innerHTML !== '' 
     && boxes[1].innerHTML !== ''
     && boxes[2].innerHTML !== ''
@@ -163,10 +163,10 @@ function restartGame() {
     winnerPopUpResetButton.addEventListener('click', () => {
         winnerPopUp.classList.remove('active')
         overlay.classList.remove('active')
-        for (let i = 0; i <= 9; i++) {
+        for (let i = 0; i <= 8; i++) {
             if (boxes[i].innerHTML === 'x' || boxes[i].innerHTML === 'o') {
                 boxes[i].innerHTML = ''
-                boxes[i].style.color = 'white'
+                boxes[i].classList.remove('win')
                 turn = 'x'
                 console.log('clear')
             }

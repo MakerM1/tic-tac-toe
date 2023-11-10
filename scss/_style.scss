@@ -257,6 +257,10 @@ body {
             font-size: 30px;
             transition: all 0.2s;
 
+            &.win {
+                color: green;
+            }
+
             &:active {
                 transform: scale(0.96);
             }
@@ -523,9 +527,14 @@ body {
 
             .box {
                 border: 2px solid black;
+                color: black;
 
                 &:hover {
                     background-color: rgb(199, 199, 199);
+                }
+
+                &.win {
+                    color: green;
                 }
             }
         }

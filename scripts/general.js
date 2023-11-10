@@ -26,12 +26,13 @@ switchButton.addEventListener("click", () => {
   circle.classList.toggle("dark");
   console.log("dark");
 
-  if (circle.classList.contains("dark")) {
+  if (!document.body.classList.contains("light-theme")) {
     document.body.classList.toggle('light-theme');
     circle.innerHTML = `<i class="fa-regular fa-sun"></i>`
-  } else {
 
+  } else if (document.body.classList.contains("light-theme")) {
     document.body.classList.remove('light-theme')
     circle.innerHTML = `<i class="fa-solid fa-moon"></i>`
+
   }
 });
