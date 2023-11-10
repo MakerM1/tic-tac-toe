@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+    <link rel="stylesheet" href="css/gobal.css" />
+  </head>
+  <body class="test">
+    <div class="switch-container">
+      <div class="circle" id="circle"></div>
+    </div>
+    <script>
+      const switchButton = document.querySelector(".switch-container");
+      const circle = document.getElementById("circle");
+
+      switchButton.addEventListener("click", () => {
+        circle.classList.toggle("dark");
+        console.log("dark");
+
+        if (circle.classList.contains("dark")) {
+          document.body.style.backgroundColor = "black";
+          circle.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+        } else {
+          document.body.style.backgroundColor = "white";
+          circle.innerHTML = `<i class="fa-regular fa-sun"></i>`;
+        }
+      });
+    </script>
+  </body>
+</html>

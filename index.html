@@ -36,8 +36,12 @@
       </div>
       <div class="open-menu">
         <div class="contents">
-          <div class="option" title="Light Theme">
-            <i class="fa-regular fa-sun fa-lg"></i>
+          <div class="option js-theme" title="Change Theme">
+            <div class="switch-container">
+              <div class="circle" id="circle">
+                <i class="fa-solid fa-moon"></i>
+              </div>
+            </div>
             <p>Theme</p>
           </div>
           <div class="option" title="VS. Bot">
@@ -71,6 +75,7 @@
         <button class="quit">Close</button>
       </div>
     </div>
+    <div class="warning-overlay" id="warning-overlay"></div>
     <div class="warning" id="warning">
       <h5>Warning:</h5>
       <p>The menu is in development so it doesn't work just yet.</p>

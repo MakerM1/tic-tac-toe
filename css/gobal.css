@@ -147,6 +147,8 @@ body {
   position: relative;
   overflow-y: hidden;
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 body::-webkit-scrollbar {
   width: 8px;
@@ -224,6 +226,51 @@ body header .open-menu .contents .option {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+body header .open-menu .contents .option .switch-container {
+  width: 35px;
+  height: 35px;
+  border: 2px solid white;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+body header .open-menu .contents .option .switch-container .circle {
+  position: absolute;
+  width: 20px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50%;
+  left: -2px;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: left 0.2s, background-color 0.2s;
+  transition: left 0.2s, background-color 0.2s;
+}
+body header .open-menu .contents .option .switch-container .circle i {
+  color: black;
+  font-size: 10px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
+}
+body header .open-menu .contents .option .switch-container .circle.dark {
+  left: 13px;
+  background-color: black;
+}
+body header .open-menu .contents .option .switch-container .circle.dark i {
+  color: white;
+}
+body header .open-menu .contents .option .switch-container:has(.circle.dark) {
+  background-color: transparent;
+  border: 2px solid black;
+}
 body header .open-menu .contents .option i {
   font-size: 20px;
   margin-top: 5px;
@@ -234,6 +281,15 @@ body header .open-menu .contents .option p {
 body header .open-menu .contents .option:hover {
   background-color: rgb(33, 33, 33);
   color: #26a7de;
+}
+body header .open-menu .contents .option:hover .switch-container {
+  border: 2px solid #26a7de;
+}
+body header .open-menu .contents .option:hover .switch-container .circle {
+  background-color: #26a7de;
+}
+body header .open-menu .contents .option:hover .switch-container .circle i {
+  color: white;
 }
 body header .menu {
   width: 50px;
@@ -395,6 +451,23 @@ body .overlay {
   transition: opacity 0.2s;
 }
 body .overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+body .warning-overlay {
+  width: 100%;
+  height: 150%;
+  background-color: rgba(0, 0, 0, 0.377);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000001;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+body .warning-overlay.active {
   opacity: 1;
   visibility: visible;
 }
@@ -587,4 +660,65 @@ body .warning.active {
     -webkit-transform: translate(-50%, -50%) scale(1);
             transform: translate(-50%, -50%) scale(1);
   }
+}
+body.light-theme {
+  background-color: white;
+  color: black;
+}
+body.light-theme h1 {
+  color: black;
+}
+body.light-theme .menu {
+  background-color: rgb(218, 218, 218);
+}
+body.light-theme .menu:hover {
+  background-color: rgb(189, 189, 189);
+}
+body.light-theme .menu .hamburger-menu div {
+  background-color: black;
+}
+body.light-theme .menu.active ~ .open-menu {
+  background-color: rgb(218, 218, 218);
+}
+body.light-theme .menu.active ~ .open-menu .option p {
+  color: black;
+}
+body.light-theme .menu.active ~ .open-menu .option i {
+  color: black;
+}
+body.light-theme .menu.active ~ .open-menu .option:hover {
+  background-color: rgb(189, 189, 189);
+}
+body.light-theme .menu.active ~ .open-menu .option:hover p {
+  color: #26a7de;
+}
+body.light-theme .menu.active ~ .open-menu .option:hover i {
+  color: #26a7de;
+}
+body.light-theme .menu.active ~ .open-menu .option:hover .switch-container {
+  border: 2px solid #26a7de;
+}
+body.light-theme .board {
+  -webkit-box-shadow: 0px 10px 12px -2px rgba(228, 228, 228, 0.75);
+          box-shadow: 0px 10px 12px -2px rgba(228, 228, 228, 0.75);
+}
+body.light-theme .board .box {
+  border: 2px solid black;
+}
+body.light-theme .board .box:hover {
+  background-color: rgb(199, 199, 199);
+}
+body.light-theme .winner {
+  background-color: rgb(216, 216, 216);
+}
+body.light-theme .winner .quit {
+  background-color: black;
+  color: white;
+}
+body.light-theme .winner .quit:hover {
+  background-color: rgb(48, 48, 48);
+}
+body.light-theme .warning {
+  background-color: rgb(216, 216, 216);
+  color: black;
 }/*# sourceMappingURL=gobal.css.map */
